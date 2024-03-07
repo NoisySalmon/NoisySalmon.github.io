@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>p5play</title>
+    <title>p5js example</title>
     <style>
       html,
       body {
@@ -28,18 +28,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/p5play/3.19.4/planck.min.js"
-      integrity="sha512-Vc+GuCYQsHHhTWzDKghZAcRamyFANBgHuLKVpICCj9zXGz7b2c29FmkJr4BWK9KjX5dmCgT2B4G1x+wGTIg61w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/p5play/3.19.4/p5play.js"
-      integrity="sha512-z/eDpCVL89APRA5cH9KRKUB/7A1PaFx81UJvnlkS9BDuf6XqwFHaYaCRWq9+LzZOyQgpGK2M+od9Ls/W5S2i4A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+
     <script>
 
 
@@ -48,7 +37,6 @@ let angleDirection = 1;
 const speed = 0.015;
 const shrink = 4.0;
 
-
 function setup() {
   createCanvas(120*shrink, 120*shrink);
 }
@@ -56,7 +44,6 @@ function setup() {
 function draw() {
   scale(shrink);
   background(204);
-  push()
   translate(20, 25);  // Move to start position
   rotate(angle);
   strokeWeight(12);
@@ -69,15 +56,12 @@ function draw() {
   rotate(angle * 2.5);
   strokeWeight(3);
   ellipse(0, 0, 20, 25);
-  pop()
-    rect(0, 0, 20, 25);
-
+  
   angle += speed * angleDirection;
   if ((angle > QUARTER_PI) || (angle < 0)) {
     angleDirection *= -1;
   }
 }
-
 
     </script>
   </body>
